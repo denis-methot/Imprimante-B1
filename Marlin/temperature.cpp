@@ -167,6 +167,11 @@ unsigned long watchmillis[EXTRUDERS] = ARRAY_BY_EXTRUDERS(0,0,0);
 #ifdef FILAMENT_SENSOR
   static int meas_shift_index;  //used to point to a delayed sample in buffer for filament width sensor
 #endif
+
+
+int consecutive_low_temperature_error[EXTRUDERS] = ARRAY_BY_EXTRUDERS(0, 0, 0);
+static unsigned long preheatStartTime[EXTRUDERS] = ARRAY_BY_EXTRUDERS(0, 0, 0);
+
 //===========================================================================
 //=============================   functions      ============================
 //===========================================================================
@@ -356,6 +361,23 @@ int getHeaterPower(int heater) {
   return soft_pwm[heater];
 }
 
+bool is_preheating(int extruder)
+{
+   return (preheatStartTime[extruder] > 0) &&
+      (millis() - preheatStartTime[extruder]) <= MILLISECONDS_PREHEAT_TIME;
+}
+
+void start_preheat_time(int extruder)
+{
+   preheatStartTime[extruder] = millis();
+}
+
+void reset_preheat_time(int extruder)
+{
+   preheatStartTime[extruder] = 0;
+}
+
+
 #if (defined(EXTRUDER_0_AUTO_FAN_PIN) && EXTRUDER_0_AUTO_FAN_PIN > -1) || \
     (defined(EXTRUDER_1_AUTO_FAN_PIN) && EXTRUDER_1_AUTO_FAN_PIN > -1) || \
     (defined(EXTRUDER_2_AUTO_FAN_PIN) && EXTRUDER_2_AUTO_FAN_PIN > -1)
@@ -507,7 +529,7 @@ void manage_heater()
   #endif
 
     // Check if temperature is within the correct range
-    if((current_temperature[e] > minttemp[e]) && (current_temperature[e] < maxttemp[e])) 
+    if((current_temperature[e] > minttemp[e] || is_preheating(e)) && (current_temperature[e] < maxttemp[e])) 
     {
       soft_pwm[e] = (int)pid_output >> 1;
     }
@@ -1677,9 +1699,9 @@ ISR(TIMER0_COMPB_vect)
     raw_temp_bed_value = 0;
 
 #if HEATER_0_RAW_LO_TEMP > HEATER_0_RAW_HI_TEMP
-    if(current_temperature_raw[0] <= maxttemp_raw[0]) {
+    if(current_temperature_raw[0] >= minttemp_raw[0] && !is_preheating(0) && target_temperature[0] > 0.0f) {
 #else
-    if(current_temperature_raw[0] >= maxttemp_raw[0]) {
+    if(current_temperature_raw[0] <= minttemp_raw[0] && !is_preheating(0) && target_temperature[0] > 0.0f) {
 #endif
         max_temp_error(0);
     }
@@ -1688,7 +1710,14 @@ ISR(TIMER0_COMPB_vect)
 #else
     if(current_temperature_raw[0] <= minttemp_raw[0]) {
 #endif
-        min_temp_error(0);
+         // min_temp_error(0);
+         ++(consecutive_low_temperature_error[0]);
+         if (consecutive_low_temperature_error[0] >= MAX_CONSECUTIVE_LOW_TEMPERATURE_ERROR_ALLOWED) {
+            min_temp_error(0);
+         }
+     }
+     else {
+         consecutive_low_temperature_error[0] = 0;
     }
 #if EXTRUDERS > 1
 #if HEATER_1_RAW_LO_TEMP > HEATER_1_RAW_HI_TEMP
@@ -1699,12 +1728,19 @@ ISR(TIMER0_COMPB_vect)
         max_temp_error(1);
     }
 #if HEATER_1_RAW_LO_TEMP > HEATER_1_RAW_HI_TEMP
-    if(current_temperature_raw[1] >= minttemp_raw[1]) {
+    if(current_temperature_raw[1] >= minttemp_raw[1] && !is_preheating(1) && target_temperature[1] > 0.0f) {
 #else
-    if(current_temperature_raw[1] <= minttemp_raw[1]) {
+    if(current_temperature_raw[1] <= minttemp_raw[1] && !is_preheating(1) && target_temperature[1] > 0.0f) {
 #endif
-        min_temp_error(1);
-    }
+         // min_temp_error(1);
+         ++(consecutive_low_temperature_error[1]);
+         if (consecutive_low_temperature_error[1] >= MAX_CONSECUTIVE_LOW_TEMPERATURE_ERROR_ALLOWED) {
+            min_temp_error(1);
+         }
+      }
+      else {
+         consecutive_low_temperature_error[1] = 0;
+      }
 #endif
 #if EXTRUDERS > 2
 #if HEATER_2_RAW_LO_TEMP > HEATER_2_RAW_HI_TEMP
@@ -1715,12 +1751,19 @@ ISR(TIMER0_COMPB_vect)
         max_temp_error(2);
     }
 #if HEATER_2_RAW_LO_TEMP > HEATER_2_RAW_HI_TEMP
-    if(current_temperature_raw[2] >= minttemp_raw[2]) {
+    if(current_temperature_raw[2] >= minttemp_raw[2] && !is_preheating(2) && target_temperature[2] > 0.0f) {
 #else
-    if(current_temperature_raw[2] <= minttemp_raw[2]) {
+    if(current_temperature_raw[2] <= minttemp_raw[2] && !is_preheating(2) && target_temperature[2] > 0.0f) {
 #endif
-        min_temp_error(2);
-    }
+                  // min_temp_error(2);
+         ++(consecutive_low_temperature_error[2]);
+         if (consecutive_low_temperature_error[2] >= MAX_CONSECUTIVE_LOW_TEMPERATURE_ERROR_ALLOWED) {
+            min_temp_error(2);
+         }
+      }
+      else {
+         consecutive_low_temperature_error[2] = 0;
+      }
 #endif
   
   /* No bed MINTEMP error? */

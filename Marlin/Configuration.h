@@ -104,7 +104,7 @@
 // 147 is Pt100 with 4k7 pullup
 // 110 is Pt100 with 1k pullup (non standard)
 
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 66
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 1
@@ -121,17 +121,17 @@
 // The minimal temperature defines the temperature below which the heater will not be enabled It is used
 // to check that the wiring to the thermistor is not broken.
 // Otherwise this would lead to the heater being powered on all the time.
-#define HEATER_0_MINTEMP 5
-#define HEATER_1_MINTEMP 5
-#define HEATER_2_MINTEMP 5
+#define HEATER_0_MINTEMP 21
+#define HEATER_1_MINTEMP 21
+#define HEATER_2_MINTEMP 21
 #define BED_MINTEMP 5
 
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
-#define HEATER_2_MAXTEMP 275
+#define HEATER_0_MAXTEMP 500
+#define HEATER_1_MAXTEMP 500
+#define HEATER_2_MAXTEMP 500
 #define BED_MAXTEMP 150
 
 // If your bed has low resistance e.g. .6 ohm and throws the fuse you can duty cycle it to reduce the
@@ -263,6 +263,33 @@ your extruder heater takes 2 minutes to hit the target on heating.
 //#define THERMAL_RUNAWAY_PROTECTION_BED_HYSTERESIS 2 // in degree Celsius
 //===========================================================================
 
+/*================== High Temperature Thermistor Support ====================
+Thermistors able to support high temperature tend to have a hard time getting
+good readings at room and lower temperatures. This means HEATER_X_RAW_LO_TEMP 
+will probably be caught when the heating element first turns on during the 
+preheating process, which will trigger a min_temp_error as a safety measure 
+and force stop everything.
+
+To circumvent this limitation, we allow for a preheat time (during which, 
+min_temp_error won't be triggered) and add a min_temp buffer to handle 
+aberrant readings.
+*/
+// if you want to enable this feature for your hot end(s) thermistor(s)
+// set values > 0 in the constants below
+
+// How many consecutive low temperature error can occur before a min_temp_error
+// is triggered. Shouldn't be more than 10.
+static const unsigned short MAX_CONSECUTIVE_LOW_TEMPERATURE_ERROR_ALLOWED = 5;
+
+// How many milliseconds a hot end will preheat before starting to check the 
+// temperature. This value should NOT be set to the time it takes the
+// hot end to reach the target temperature, but should be set to the time it 
+// takes to reach the minimum temperature your thermistor can read. The lower
+// the better/safer, and shouldn't need to be more than 30 seconds (30000)
+static const unsigned long MILLISECONDS_PREHEAT_TIME = 15000;
+
+
+//===========================================================================
 
 //===========================================================================
 //=============================Mechanical Settings===========================
@@ -483,7 +510,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {88.88,88.88,1007.7,471.5}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {88.88,88.88,1007.7,250}  // default steps per unit for Ultimaker (microstepping 1/16 for dyzextruder)
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 25, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
