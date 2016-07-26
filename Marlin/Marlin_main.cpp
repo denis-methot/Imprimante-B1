@@ -572,9 +572,8 @@ void setup()
   MCUSR=0;
 
   SERIAL_ECHOPGM(MSG_MARLIN);
-  SERIAL_ECHOLNPGM(" " SHORT_BUILD_VERSION);
-
-  #ifdef STRING_DISTRIBUTION_DATE
+  SERIAL_ECHOLNPGM(VERSION_STRING);
+  #ifdef STRING_VERSION_CONFIG_H
     #ifdef STRING_CONFIG_H_AUTHOR
       SERIAL_ECHO_START;
       SERIAL_ECHOPGM(MSG_CONFIGURATION_VER);
@@ -606,7 +605,7 @@ void setup()
   servo_init();
   
 
-  lcd_init();
+  lcd_init(); //commented out by Josh, 8/20/2015
   _delay_ms(1000);	// wait 1sec to display the splash screen
 
   #if defined(CONTROLLERFAN_PIN) && CONTROLLERFAN_PIN > -1
@@ -668,7 +667,7 @@ void loop()
   manage_heater();
   manage_inactivity();
   checkHitEndstops();
-  lcd_update();
+  lcd_update();  //commented out by Josh, 8/20/2015
 }
 
 void get_command()
@@ -4196,7 +4195,7 @@ void controllerFan()
     #if EXTRUDERS > 2
        || !READ(E2_ENABLE_PIN)
     #endif
-    #if EXTRUDERS > 1
+    #if EXTRUDER > 1
       #if defined(X2_ENABLE_PIN) && X2_ENABLE_PIN > -1
        || !READ(X2_ENABLE_PIN)
       #endif

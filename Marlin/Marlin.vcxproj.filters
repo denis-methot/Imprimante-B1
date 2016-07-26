@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Marlin.ino" />
+    <None Include="Marlin.pde" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Visual Micro\.Marlin.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlinkM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigurationStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Configuration_adv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DOGMbitmaps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LiquidCrystalRus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Marlin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MarlinSerial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sd2Card.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sd2PinMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdBaseFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdFatConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdFatStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdFatUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SdVolume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Servo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="U8glib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="boards.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cardreader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dogm_font_data_marlin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dogm_lcd_implementation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fastio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_an.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_ca.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_de.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_en.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_es.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_eu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_fi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_fr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_it.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_nl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_pl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_pt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="language_ru.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="motion_control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pins.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="planner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qr_solve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="speed_lookuptable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stepper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="temperature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thermistortables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="u8g.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ultralcd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ultralcd_implementation_hitachi_HD44780.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ultralcd_st7920_u8glib_rrd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector_3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="watchdog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BlinkM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LiquidCrystalRus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MarlinSerial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Marlin_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sd2Card.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SdBaseFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SdFatUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SdFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SdVolume.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Servo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="U8glib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cardreader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chessengine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="digipot_mcp4451.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="motion_control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="planner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qr_solve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stepper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="temperature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_bitmap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_circle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_clip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_api_16gr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_fast_parallel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_hw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_no_en_parallel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_parallel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_port_d_wr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_ssd_i2c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_st7920_hw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_st7920_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_std_sw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_sw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_arduino_t6963.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_atmega_hw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_atmega_parallel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_atmega_st7920_hw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_atmega_st7920_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_atmega_sw_spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_i2c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_com_null.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_cursor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_delay.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_flipdisc_2x7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_gprof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ili9325d_320x240.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ks0108_128x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_lc7981_160x80.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_lc7981_240x128.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_lc7981_240x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_lc7981_320x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_null.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_pcd8544_84x48.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_pcf8812_96x65.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_sbn1661_122x32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1306_128x32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1306_128x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1309_128x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1322_nhd31oled_bw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1322_nhd31oled_gr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1325_nhd27oled_bw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1325_nhd27oled_bw_new.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1325_nhd27oled_gr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1325_nhd27oled_gr_new.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_ssd1327_96x96_gr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_64128n.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_dogm128.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_dogm132.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_lm6059.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_lm6063.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_nhd_c12832.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7565_nhd_c12864.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7687_c144mvgd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7920_128x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7920_192x32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_st7920_202x32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_t6963_128x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_t6963_240x128.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_t6963_240x64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_tls8204_84x48.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_uc1610_dogxl160.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_uc1701_dogs102.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_dev_uc1701_mini12864.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_ellipse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_font.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_font_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_line.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_ll_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_page.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb14v1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb16h1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb16h2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb16v1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb16v2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb32h1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb8h1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb8h1f.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb8h2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb8h8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb8v1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_pb8v2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_rect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_rot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_scale.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_state.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_u16toa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_u8toa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="u8g_virtual_screen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ultralcd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vector_3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="watchdog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
