@@ -2393,6 +2393,9 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
 #define HEATER_1_PIN 7
 #define TEMP_1_PIN 1
 
+// Pin for the BL100 from BLTOUCH
+#define SERVO0_PIN 44 // untested
+
 #ifdef BARICUDA
 #define HEATER_2_PIN 6
 #else
