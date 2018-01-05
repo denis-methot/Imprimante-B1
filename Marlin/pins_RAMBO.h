@@ -49,7 +49,7 @@
 //
 // Servos
 //
-#define SERVO0_PIN         22 // Motor header MX1
+#define SERVO0_PIN         44 // Motor header MX1 (dmethot-2017-03-01: était 22. Utilisée pour BLTOUCH)
 #define SERVO1_PIN         23 // Motor header MX2
 #define SERVO2_PIN         24 // Motor header MX3
 #define SERVO3_PIN          5 // PWM header pin 5
@@ -106,9 +106,37 @@
 #define E1_MS1_PIN         63
 #define E1_MS2_PIN         64
 
-#define DIGIPOTSS_PIN      38
-#define DIGIPOT_CHANNELS {4,5,3,0,1} // X Y Z E0 E1 digipot channels to stepper driver mapping
+#ifdef SWAP_E0_E1
+  // Replace E0 pins with E1 pins assignment and vice versa
+  #undef  E0_STEP_PIN
+  #undef  E0_DIR_PIN
+  #undef  E0_ENABLE_PIN
+  #undef  E0_MS1_PIN
+  #undef  E0_MS2_PIN
+  #define E0_STEP_PIN        33
+  #define E0_DIR_PIN         42
+  #define E0_ENABLE_PIN      25
+  #define E0_MS1_PIN         63
+  #define E0_MS2_PIN         64
 
+  #undef  E1_STEP_PIN
+  #undef  E1_DIR_PIN
+  #undef  E1_ENABLE_PIN
+  #undef  E1_MS1_PIN
+  #undef  E1_MS2_PIN
+  #define E1_STEP_PIN        34
+  #define E1_DIR_PIN         43
+  #define E1_ENABLE_PIN      26
+  #define E1_MS1_PIN         65
+  #define E1_MS2_PIN         66
+#endif
+
+#define DIGIPOTSS_PIN      38
+#ifdef SWAP_E0_E1
+  #define DIGIPOT_CHANNELS {4,5,3,1,0} // X Y Z E1 E0 digipot channels to stepper driver mapping
+#else
+  #define DIGIPOT_CHANNELS {4,5,3,0,1} // X Y Z E0 E1 digipot channels to stepper driver mapping
+#endif
 //
 // Temperature Sensors
 //
