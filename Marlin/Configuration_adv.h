@@ -435,7 +435,7 @@
  *    M909, M910 & LCD - only PRINTRBOARD_REVF & RIGIDBOARD_V2
  */
 //#define PWM_MOTOR_CURRENT { 1300, 1300, 1250 }          // Values in milliamps
-#define DIGIPOT_MOTOR_CURRENT {200,200,135,135,135}       // Values 0-255 
+#define DIGIPOT_MOTOR_CURRENT {175,175,135,135,135}       // Values 0-255 
                                                           //    RAMBO:
                                                           //      N = (256/1.67) * I
                                                           //         1.1A = 135

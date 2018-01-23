@@ -706,7 +706,7 @@
  *    (0,0)
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 5   // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -40  // Y offset: -front +behind [the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -30  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.0 // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
@@ -771,7 +771,7 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
-#define INVERT_Y_DIR true
+#define INVERT_Y_DIR false
 #define INVERT_Z_DIR true
 
 // Enable this option for Toshiba stepper drivers
@@ -936,10 +936,10 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X/2
 
   // Set the boundaries for probing (where the probe can reach).
-  // X-axis
+  // Y-axis
   #define FRONT_PROBE_BED_POSITION  (-1*Y_PROBE_OFFSET_FROM_EXTRUDER)
   #define BACK_PROBE_BED_POSITION   (Y_MAX_POS + Y_PROBE_OFFSET_FROM_EXTRUDER)
-  // Y-axis
+  // X-axis
   #define LEFT_PROBE_BED_POSITION   (25)
   #define RIGHT_PROBE_BED_POSITION  (X_MAX_POS-25)
 
@@ -1169,7 +1169,7 @@
 // @section temperature
 
 // Preheat Constants
-#define PREHEAT_1_TEMP_HOTEND 180
+#define PREHEAT_1_TEMP_HOTEND 205 // DME: Pour PLA 
 #define PREHEAT_1_TEMP_BED     70
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
