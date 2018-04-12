@@ -851,6 +851,10 @@
   #define FIL_RUNOUT_INVERTING false // set to true to invert the logic of the sensor.
   #define ENDSTOPPULLUP_FIL_RUNOUT   // Uncomment to use internal pullup for filament runout pins if the sensor is defined.
   #define FILAMENT_RUNOUT_SCRIPT "M600"
+
+  // Spécifique pour Berta, Dyze Sentinel sur ENDSTOP X-MAX. Voir pins_RAMBO.h
+  #define FIL_RUNOUT_PIN      24 
+
 #endif
 
 //===========================================================================
@@ -1188,7 +1192,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }

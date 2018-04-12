@@ -46,9 +46,6 @@
 
 #define BOARD_NAME "Rambo"
 
-// Specific pour BERTA:
-#define FIL_RUNOUT_PIN      X_MAX_PIN
-
 //
 // Servos
 //
