@@ -98,8 +98,8 @@
  * Thermal Protection parameters for the bed are just as above for hotends.
  */
 #if ENABLED(THERMAL_PROTECTION_BED)
-  #define THERMAL_PROTECTION_BED_PERIOD 20    // Seconds
-  #define THERMAL_PROTECTION_BED_HYSTERESIS 2 // Degrees Celsius
+  #define THERMAL_PROTECTION_BED_PERIOD 1200  // Seconds
+  #define THERMAL_PROTECTION_BED_HYSTERESIS 1 // Degrees Celsius
 
   /**
    * As described above, except for the bed (M140/M190/M303).
@@ -410,7 +410,7 @@
 // Default stepper release if idle. Set to 0 to deactivate.
 // Steppers will shut down DEFAULT_STEPPER_DEACTIVE_TIME seconds after the last move when DISABLE_INACTIVE_? is true.
 // Time can be set by M18 and M84.
-#define DEFAULT_STEPPER_DEACTIVE_TIME 120
+#define DEFAULT_STEPPER_DEACTIVE_TIME 300 // BERTA: Etait 120 par defaut
 #define DISABLE_INACTIVE_X true
 #define DISABLE_INACTIVE_Y true
 #define DISABLE_INACTIVE_Z true  // set to false if the nozzle will fall down on your printed part when print has finished.
@@ -487,13 +487,14 @@
  *    M909, M910 & LCD - only PRINTRBOARD_REVF & RIGIDBOARD_V2
  */
 //#define PWM_MOTOR_CURRENT { 1300, 1300, 1250 }          // Values in milliamps
-#define DIGIPOT_MOTOR_CURRENT {175,175,135,135,135}       // Values 0-255 
+#define DIGIPOT_MOTOR_CURRENT {200,200,200,135,135}       // Values 0-255 
                                                           //    RAMBO:
                                                           //      N = (256/1.67) * I
-                                                          //         1.1A = 135
-                                                          //           1A = 120
-                                                          //        0.75A = 90
-                                                          //        0.59A = 60
+                                                          //         1.30A = 200
+                                                          //         1.14A = 175
+                                                          //         0.90A = 135
+                                                          //         0.78A = 120
+                                                          //         0.59A = 90
                                                           //    Note for RAMBO: Info that is indicated in the original firmware code is wrong.
                                                           //                    See "Motor Current" section in http://reprap.org/wiki/Rambo_firmware for accurate details
                                                           //                    Also confirmed by HW analysis from Denis Méthot.
@@ -1023,8 +1024,8 @@
   #define FILAMENT_CHANGE_ALERT_BEEPS         10  // Number of alert beeps to play when a response is needed.
   #define PAUSE_PARK_NO_STEPPER_TIMEOUT           // Enable for XYZ steppers to stay powered on during filament change.
 
-  //#define PARK_HEAD_ON_PAUSE                    // Park the nozzle during pause and filament change.
-  //#define HOME_BEFORE_FILAMENT_CHANGE           // Ensure homing has been completed prior to parking for filament change
+  #define PARK_HEAD_ON_PAUSE                      // Park the nozzle during pause and filament change.
+  //#define HOME_BEFORE_FILAMENT_CHANGE             // Ensure homing has been completed prior to parking for filament change
 
   //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
   //#define FILAMENT_UNLOAD_ALL_EXTRUDERS         // Allow M702 to unload all extruders above a minimum target temp (as set by M302)

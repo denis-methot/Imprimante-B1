@@ -360,7 +360,7 @@
 #define HEATER_2_MAXTEMP 500
 #define HEATER_3_MAXTEMP 500
 #define HEATER_4_MAXTEMP 500
-#define BED_MAXTEMP 125
+#define BED_MAXTEMP 110
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -901,8 +901,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 800	// BERTA: Etait 775 sur BERTA 1
-#define Y_BED_SIZE 400  // BERTA: Etait 383 sur BERTA 1
+#define X_BED_SIZE 830	// BERTA: Etait 775 sur BERTA 1
+#define Y_BED_SIZE 383  // BERTA: Etait 383 sur BERTA 1
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -910,7 +910,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 370  // BERTA: Ëtait 370 sur BERTA 1
+#define Z_MAX_POS 415  // BERTA: Etait 370 sur BERTA 1
 
 /**
  * Software Endstops
