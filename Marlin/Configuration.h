@@ -625,7 +625,7 @@
 #define NEMA17_XY_MOTOR_STEPS     (NEMA17_FULL_STEPS * NEMA17_XY_MICROSTEPS)
 #define NEMA17_Z_MOTOR_STEPS      (NEMA17_FULL_STEPS * NEMA17_Z_MICROSTEPS)
 #define PULLEY_PITCH              2.0	// 2mm/dent
-#define PULLEY_TEETH              40.0	// nombre de dents par tour
+#define PULLEY_TEETH              20.0	// nombre de dents par tour
 #define Z_ROD_PITCH 		      2     // Selon vis sans fin 2 mm/tour
 #define XY_STEPS (NEMA17_XY_MOTOR_STEPS / (PULLEY_PITCH * PULLEY_TEETH))
 #define Z_STEPS (NEMA17_Z_MOTOR_STEPS / Z_ROD_PITCH)
